@@ -47,13 +47,13 @@ follows:
 
 ```bash
 cd ~
-curl -fsSL https://raw.githubusercontent.com/dagitali/.setup/HEAD/Makefile >Makefile
+git clone https://github.com/dagitali/.setup
 ```
 
 ### Usage
 
 Setup works by running the `make` command from the directory where the project's
-makefile was installed. The command's basic syntax is:
+makefile was installed (`~/.setup` by default). The command's basic syntax is:
 
 ```bash
 make [target]
@@ -80,10 +80,26 @@ Setup defines two important makefile targets:
 
 For most users, running `make install` one time will be sufficient, as their use
 case &ndash; likely their only use case &ndash; is automating the customization of their
-Unix-based system. For users who are interested in contributing to the codebase
-of Setup, they are encouraged to also run `make test` as part of their testing
-practice, which will simulate running `make install` in this project's `tmp`
-directory.
+Unix-based system.
+
+```bash
+cd ~/.setup
+make install
+cd ~
+ls -al
+```
+
+For users who are interested in contributing to the codebase of Setup, they are
+encouraged to also run `make test` as part of their testing practice, which will
+simulate running `make install` in this project's `tmp` directory.
+
+```bash
+cd ~/.setup
+make test
+cd tmp
+ls -al
+cd ~
+```
 
 ## Documentation
 
