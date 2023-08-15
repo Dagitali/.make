@@ -47,7 +47,7 @@ follows:
 
 ```bash
 cd ~
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Dagitali/makefile-setup/HEAD/Makefile)"
+curl -fsSL https://raw.githubusercontent.com/Dagitali/makefile-setup/HEAD/Makefile >Makefile
 ```
 
 ### Usage
