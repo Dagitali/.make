@@ -73,7 +73,7 @@ all: help
 ## clean: Remove files/directories.
 .PHONY: clean
 clean:
-	rm -rf tmp/{Makefile,.$(shell)}
+	rm -rf tmp
 
 ## env: Install shell environment variable files.
 .PHONY: env
@@ -143,4 +143,5 @@ $(lib)/git/git-prompt.sh:
 	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
 tmp/Makefile:
+	mkdir -p $(@D)
 	$(curl) $@ $(setup_base_url)/$(@F)
