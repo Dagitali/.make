@@ -17,6 +17,14 @@
 SHELL = /bin/bash
 
 
+# SECTION: INCLUDES ========================================================= #
+
+ifneq (,$(wildcard $./.env))
+	include .env
+	export
+endif
+
+
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
 BUILD_DIR ?= $(HOME)
@@ -79,6 +87,10 @@ clean:
 .PHONY: env
 env: $(env)/secrets.env $(env)/settings.env
 
+## env: Install Git configuration files.
+.PHONY: git
+git: $(BUILD_DIR)/.gitconfig
+
 ## help: Show this help message.
 .PHONY: help
 help:
@@ -100,7 +112,7 @@ help:
 
 ## lib: Complete all installation activities.
 .PHONY: install
-install: lib
+install: env git lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
@@ -141,6 +153,11 @@ $(lib)/git/git-completion.$(shell):
 $(lib)/git/git-prompt.sh:
 	mkdir -p $(@D)
 	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
+
+$(BUILD_DIR)/.gitconfig:
+	mkdir -p $(@D)
+	cat etc/templates/.gitconfig \
+	| envsubst >$@
 
 $(BUILD_DIR)/Makefile:
 	mkdir -p $(@D)
