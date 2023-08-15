@@ -130,7 +130,7 @@ update: lib
 
 $(lib)/git/git-completion.$(shell):
 	mkdir -p $(@D)
-	$(curl) $@ $(git_base_url)/contrib/completion/$@F)
+	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
 $(lib)/git/git-prompt.sh:
 	mkdir -p $(@D)
