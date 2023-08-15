@@ -17,6 +17,11 @@
 SHELL = /bin/bash
 
 
+# SECTION: EXTERNAL VARIABLES =============================================== #
+
+BUILD_DIR ?= $(HOME)
+
+
 # SECTION: INTERNAL VARIABLES =============================================== #
 
 ### Commands ###
@@ -27,7 +32,8 @@ curl = curl --create-dirs --silent --output
 
 shell := $(notdir $(SHELL))
 
-lib := .$(shell)/lib
+env := $(BUILD_DIR)/.env
+lib := $(BUILD_DIR)/.$(shell)/lib
 
 ### Formatting ###
 
@@ -71,7 +77,7 @@ clean:
 
 ## env: Install shell environment variable files.
 .PHONY: env
-env: .env/secrets.env .env/settings.env
+env: $(env)/secrets.env $(env)/settings.env
 
 ## help: Show this help message.
 .PHONY: help
@@ -107,7 +113,7 @@ lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 ## test: Run tests.
 .PHONY: test
 test: clean tmp/Makefile
-	cd tmp; make lib; cd -
+	cd tmp; make lib BUILD_DIR=tmp; cd -
 
 ## update: Pull latest changes to project.
 .PHONY: update
@@ -116,13 +122,13 @@ update: lib
 
 # SECTION: NON-PHONY TARGETS ================================================ #
 
-.env/secrets.env:
+$(env)/secrets.env:
 	mkdir -p $(@D)
 	chmod 700 $(@D)
 	touch $@
 	chmod 600 $@
 
-.env/settings.env:
+$(env)/settings.env:
 	mkdir -p $(@D)
 	chmod 700 $(@D)
 	touch $@
