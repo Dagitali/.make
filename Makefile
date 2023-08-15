@@ -100,7 +100,7 @@ help:
 
 ## lib: Complete all installation activities.
 .PHONY: install
-install: lib-git
+install: lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
@@ -112,8 +112,8 @@ lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 ## test: Run tests.
 .PHONY: test
-test: clean tmp/Makefile
-	cd tmp; make lib BUILD_DIR=tmp; cd -
+test: clean $(BUILD_DIR)/Makefile
+	make install BUILD_DIR=tmp
 
 ## update: Pull latest changes to project.
 .PHONY: update
@@ -142,6 +142,6 @@ $(lib)/git/git-prompt.sh:
 	mkdir -p $(@D)
 	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
-tmp/Makefile:
+$(BUILD_DIR)/Makefile:
 	mkdir -p $(@D)
 	$(curl) $@ $(setup_base_url)/$(@F)
