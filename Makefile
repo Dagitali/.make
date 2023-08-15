@@ -58,7 +58,6 @@ fc_cyan := $(esc)[0;36m
 
 github_base_url = https://raw.githubusercontent.com
 git_base_url = $(github_base_url)/git/git/HEAD
-setup_base_url = $(github_base_url)/dagitali/.setup/HEAD
 
 
 # SECTION: MACROS =========================================================== #
@@ -124,7 +123,7 @@ lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 ## test: Run tests.
 .PHONY: test
-test: clean $(BUILD_DIR)/Makefile
+test: clean
 	make install BUILD_DIR=tmp
 
 ## update: Pull latest changes to project.
@@ -158,7 +157,3 @@ $(BUILD_DIR)/.gitconfig:
 	mkdir -p $(@D)
 	cat etc/templates/.gitconfig \
 	| envsubst >$@
-
-$(BUILD_DIR)/Makefile:
-	mkdir -p $(@D)
-	$(curl) $@ $(setup_base_url)/$(@F)
