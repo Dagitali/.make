@@ -100,7 +100,7 @@ help:
 
 ## lib: Complete all installation activities.
 .PHONY: install
-install: lib-git
+install: lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
