@@ -185,5 +185,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/dropbox,emacs,linux,macos,vim,visualstudiocode,windows
 
+*.env
+
 lib/*
 !lib/.gitkeep
+
+tmp/
