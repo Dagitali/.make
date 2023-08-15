@@ -78,6 +78,7 @@ Official
 Style
 
 1. <https://clarkgrubb.com/makefile-style-guide>
+2. <https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html>
 
 ## Platforms: `pre-commit`
 
