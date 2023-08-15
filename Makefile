@@ -44,7 +44,7 @@ fc_cyan := $(esc)[0;36m
 
 github_base_url = https://raw.githubusercontent.com
 git_base_url = $(github_base_url)/git/git/HEAD
-setup_base_url = $(github_base_url)/dagitali/makefile-setup/HEAD
+setup_base_url = $(github_base_url)/dagitali/setup/HEAD
 
 
 # SECTION: MACROS =========================================================== #
