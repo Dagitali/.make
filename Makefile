@@ -43,11 +43,6 @@ is_linux := $(filter Linux, $(uname))
 
 shell := $(notdir $(SHELL))
 
-### URLs ###
-
-github_base_url = https://raw.githubusercontent.com
-git_base_url = $(github_base_url)/git/git/HEAD
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 
