@@ -141,23 +141,13 @@ update: lib
 	read -p "Enter your email address to use with Git: " git_user_email; \
 	echo GIT_USER_EMAIL=$${git_user_email} >>.env;
 
-$(env)/secrets.env:
+$(env)/secrets.env $(env)/settings.env:
 	mkdir -p $(@D)
 	chmod 700 $(@D)
 	touch $@
 	chmod 600 $@
 
-$(env)/settings.env:
-	mkdir -p $(@D)
-	chmod 700 $(@D)
-	touch $@
-	chmod 600 $@
-
-$(lib)/git/git-completion.$(shell):
-	mkdir -p $(@D)
-	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
-
-$(lib)/git/git-prompt.sh:
+$(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
 	mkdir -p $(@D)
 	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
