@@ -33,11 +33,13 @@ lib-git: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
 # SECTION: FILE TARGETS ===================================================== #
 
 $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh:
-	mkdir -p $(@D)
-	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
+	$(call msg,Creating file "$@")
+	@mkdir -p $(@D)
+	@$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
 $(BUILD_DIR)/.gitconfig:
-	mkdir -p $(@D)
-	source .env; \
+	$(call msg,Creating file "$@")
+	@mkdir -p $(@D)
+	@source .env; \
 	cat etc/.gitconfig \
 	| envsubst >$@
