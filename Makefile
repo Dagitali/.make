@@ -19,10 +19,8 @@ SHELL = /bin/bash
 
 # SECTION: INCLUDES ========================================================= #
 
-ifneq (,$(wildcard $./.env))
-	include .env
-	export
-endif
+include .env
+export
 
 
 # SECTION: EXTERNAL VARIABLES =============================================== #
@@ -165,5 +163,6 @@ $(lib)/git/git-prompt.sh:
 
 $(BUILD_DIR)/.gitconfig:
 	mkdir -p $(@D)
+	source .env; \
 	cat etc/.gitconfig \
 	| envsubst >$@
