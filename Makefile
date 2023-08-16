@@ -42,6 +42,12 @@ shell := $(notdir $(SHELL))
 env := $(BUILD_DIR)/.env
 lib := $(BUILD_DIR)/.$(shell)/lib
 
+### Operating System ###
+
+uname := $(shell uname)
+is_macos := $(filter Darwin, $(uname))
+is_linux := $(filter Linux, $(uname))
+
 ### URLs ###
 
 github_base_url = https://raw.githubusercontent.com
@@ -94,14 +100,11 @@ update: lib
 # SECTION: NON-PHONY TARGETS ================================================ #
 
 .env:
-	[ "$$(uname)" = Darwin ] \
-	&& git_credential_helper=osxkeychain \
-	|| git_credential_helper=store; \
-	echo GIT_CREDENTIAL_HELPER=$${git_credential_helper} >.env; \
-	read -p "Enter your full name to use with Git: " git_user_name; \
-	echo GIT_USER_NAME=$${git_user_name} >>.env; \
-	read -p "Enter your email address to use with Git: " git_user_email; \
-	echo GIT_USER_EMAIL=$${git_user_email} >>.env;
+	$(eval git_credential_helper = $(if $(is_macos),osxkeychain,store))
+	$(eval git_user_name = $(shell read -p "Full Name (Git): " var; echo $$var))
+	$(eval git_user_email = $(shell read -p "Email (Git): " var; echo $$var))
+	@cat etc/.env \
+	| envsubst >$@
 
 $(env)/secrets.env $(env)/settings.env:
 	mkdir -p $(@D)
