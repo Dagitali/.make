@@ -165,5 +165,5 @@ $(lib)/git/git-prompt.sh:
 
 $(BUILD_DIR)/.gitconfig:
 	mkdir -p $(@D)
-	cat etc/templates/.gitconfig \
+	cat etc/.gitconfig \
 	| envsubst >$@
