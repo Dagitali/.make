@@ -17,6 +17,14 @@
 SHELL = /bin/bash
 
 
+# SECTION: INCLUDES ========================================================= #
+
+ifneq (,$(wildcard $./.env))
+	include .env
+	export
+endif
+
+
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
 BUILD_DIR ?= $(HOME)
@@ -50,7 +58,6 @@ fc_cyan := $(esc)[0;36m
 
 github_base_url = https://raw.githubusercontent.com
 git_base_url = $(github_base_url)/git/git/HEAD
-setup_base_url = $(github_base_url)/dagitali/.setup/HEAD
 
 
 # SECTION: MACROS =========================================================== #
@@ -79,6 +86,10 @@ clean:
 .PHONY: env
 env: $(env)/secrets.env $(env)/settings.env
 
+## env: Install Git configuration files.
+.PHONY: git
+git: $(BUILD_DIR)/.gitconfig
+
 ## help: Show this help message.
 .PHONY: help
 help:
@@ -100,7 +111,7 @@ help:
 
 ## lib: Complete all installation activities.
 .PHONY: install
-install: lib-git
+install: .env env git lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
@@ -112,8 +123,8 @@ lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 ## test: Run tests.
 .PHONY: test
-test: clean tmp/Makefile
-	cd tmp; make lib BUILD_DIR=tmp; cd -
+test: clean
+	make install BUILD_DIR=tmp
 
 ## update: Pull latest changes to project.
 .PHONY: update
@@ -121,6 +132,16 @@ update: lib
 
 
 # SECTION: NON-PHONY TARGETS ================================================ #
+
+.env:
+	[ "$$(uname)" = Darwin ] \
+	&& git_credential_helper=osxkeychain \
+	|| git_credential_helper=store; \
+	echo GIT_CREDENTIAL_HELPER=$${git_credential_helper} >.env; \
+	read -p "Enter your full name to use with Git: " git_user_name; \
+	echo GIT_USER_NAME=$${git_user_name} >>.env; \
+	read -p "Enter your email address to use with Git: " git_user_email; \
+	echo GIT_USER_EMAIL=$${git_user_email} >>.env;
 
 $(env)/secrets.env:
 	mkdir -p $(@D)
@@ -142,6 +163,7 @@ $(lib)/git/git-prompt.sh:
 	mkdir -p $(@D)
 	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
-tmp/Makefile:
+$(BUILD_DIR)/.gitconfig:
 	mkdir -p $(@D)
-	$(curl) $@ $(setup_base_url)/$(@F)
+	cat etc/templates/.gitconfig \
+	| envsubst >$@

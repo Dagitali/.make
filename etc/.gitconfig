@@ -1,0 +1,44 @@
+# .gitconfig
+# Setup
+#
+# Copyright © 2023 Dagitali LLC All rights reserved.
+#
+# An optional Git configuration file. Defines attributes per pathname.
+#
+# REFERENCES:
+# 1. https://git-scm.com/docs/git-config
+# 2. https://gist.github.com/Wirone/5cc2f380db031a9d94f4eb449db8c72a
+
+### Git ###
+
+[color]
+	ui = true
+[core]
+	excludesfile = $HOME/.gitignore
+[credential]
+	helper = $GIT_CREDENTIAL_HELPER
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[user]
+	name = $GIT_USER_NAME
+	email = $GIT_USER_EMAIL
+
+### GitFlow ###
+
+[gitflow "branch"]
+    master = main
+    develop = develop
+[gitflow "prefix"]
+	feature = feature/
+	release = release/
+	hotfix = hotfix/
+	bugfix = bugfix/
+	support = support/
+	versiontag = v
