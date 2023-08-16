@@ -111,7 +111,7 @@ help:
 
 ## lib: Complete all installation activities.
 .PHONY: install
-install: env git lib
+install: .env env git lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
@@ -132,6 +132,16 @@ update: lib
 
 
 # SECTION: NON-PHONY TARGETS ================================================ #
+
+.env:
+	[ "$$(uname)" = Darwin ] \
+	&& git_credential_helper=osxkeychain \
+	|| git_credential_helper=store; \
+	echo GIT_CREDENTIAL_HELPER=$${git_credential_helper} >.env; \
+	read -p "Enter your full name to use with Git: " git_user_name; \
+	echo GIT_USER_NAME=$${git_user_name} >>.env; \
+	read -p "Enter your email address to use with Git: " git_user_email; \
+	echo GIT_USER_EMAIL=$${git_user_email} >>.env;
 
 $(env)/secrets.env:
 	mkdir -p $(@D)
