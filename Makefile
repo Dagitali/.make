@@ -40,7 +40,6 @@ curl = curl --create-dirs --silent --output
 shell := $(notdir $(SHELL))
 
 env := $(BUILD_DIR)/.env
-lib := $(BUILD_DIR)/.$(shell)/lib
 
 ### Operating System ###
 
@@ -83,10 +82,6 @@ install: .env env git lib
 .PHONY: lib
 lib: lib-git
 
-## lib-git: Install Git-related shell libraries.
-.PHONY: lib-git
-lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
-
 ## test: Run tests.
 .PHONY: test
 test: clean
@@ -111,13 +106,3 @@ $(env)/secrets.env $(env)/settings.env:
 	chmod 700 $(@D)
 	touch $@
 	chmod 600 $@
-
-$(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
-	mkdir -p $(@D)
-	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
-
-$(BUILD_DIR)/.gitconfig:
-	mkdir -p $(@D)
-	source .env; \
-	cat etc/.gitconfig \
-	| envsubst >$@
