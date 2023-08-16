@@ -30,6 +30,6 @@ All contributors are expected to honor and adhere to our [Code of Conduct](CODE_
 1. Read it before making any contributions;
 2. Follow it in all your interactions with the project.
 
-[PR]: https://github.com/dagitali/.setup/pulls
+[PR]: https://github.com/dagitali/.make/pulls
 [owner]: https://dagitali.com
 [SemVer]: http://semver.org
