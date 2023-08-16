@@ -16,11 +16,12 @@
 
 SHELL = /bin/bash
 
+export
+
 
 # SECTION: INCLUDES ========================================================= #
 
-include .env
-export
+include src/init.mk
 
 
 # SECTION: EXTERNAL VARIABLES =============================================== #
@@ -39,32 +40,17 @@ curl = curl --create-dirs --silent --output
 shell := $(notdir $(SHELL))
 
 env := $(BUILD_DIR)/.env
-lib := $(BUILD_DIR)/.$(shell)/lib
 
-### Formatting ###
+### Operating System ###
 
-# C-style octal code representing an ASCI escape character.
-esc := \033
-
-# Setting the text intensity/emphasis of STDOUT.
-reset := $(esc)[0m
-
-# Setting the text color of STDOUT.
-fc_cyan := $(esc)[0;36m
+uname := $(shell uname)
+is_macos := $(filter Darwin, $(uname))
+is_linux := $(filter Linux, $(uname))
 
 ### URLs ###
 
 github_base_url = https://raw.githubusercontent.com
 git_base_url = $(github_base_url)/git/git/HEAD
-
-
-# SECTION: MACROS =========================================================== #
-
-# "Targets" section line item of the "make" command's online help.
-define target
-$(fc_cyan)%-20s$(reset) %s
-endef
-export target
 
 
 # SECTION: PHONY TARGETS ==================================================== #
@@ -88,25 +74,6 @@ env: $(env)/secrets.env $(env)/settings.env
 .PHONY: git
 git: $(BUILD_DIR)/.gitconfig
 
-## help: Show this help message.
-.PHONY: help
-help:
-# Use the makefile set as a data source to display a lexicographically
-# sorted, color-formatted list of targets.
-#
-# Note:
-# 1. "cat" outputs a space-delimited list of makefiles -- the main makefile
-#    (i.e., "Makefile") & secondary makefiles (i.e., "*.mk").
-# 2. "grep" filters makefiles for targets & their descriptions.
-	@echo 'usage: make [target]'
-	@echo
-	@echo 'targets:'
-	@cat $(MAKEFILE_LIST) \
-	| grep -E '^## [0-9a-zA-Z_-]+: .*$$' \
-	| sed -e 's/## //' \
-	| sort \
-	| awk -F: '{printf "  $(target)\n", $$1, $$2}'
-
 ## lib: Complete all installation activities.
 .PHONY: install
 install: .env env git lib
@@ -114,10 +81,6 @@ install: .env env git lib
 ## lib: Install shell libraries.
 .PHONY: lib
 lib: lib-git
-
-## lib-git: Install Git-related shell libraries.
-.PHONY: lib-git
-lib-git: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 ## test: Run tests.
 .PHONY: test
@@ -129,30 +92,17 @@ test: clean
 update: lib
 
 
-# SECTION: NON-PHONY TARGETS ================================================ #
+# SECTION: FILE TARGETS ===================================================== #
 
 .env:
-	[ "$$(uname)" = Darwin ] \
-	&& git_credential_helper=osxkeychain \
-	|| git_credential_helper=store; \
-	echo GIT_CREDENTIAL_HELPER=$${git_credential_helper} >.env; \
-	read -p "Enter your full name to use with Git: " git_user_name; \
-	echo GIT_USER_NAME=$${git_user_name} >>.env; \
-	read -p "Enter your email address to use with Git: " git_user_email; \
-	echo GIT_USER_EMAIL=$${git_user_email} >>.env;
+	$(eval git_credential_helper = $(if $(is_macos),osxkeychain,store))
+	$(eval git_user_name = $(shell read -p "Full Name (Git): " var; echo $$var))
+	$(eval git_user_email = $(shell read -p "Email (Git): " var; echo $$var))
+	@cat etc/.env \
+	| envsubst >$@
 
 $(env)/secrets.env $(env)/settings.env:
 	mkdir -p $(@D)
 	chmod 700 $(@D)
 	touch $@
 	chmod 600 $@
-
-$(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
-	mkdir -p $(@D)
-	$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
-
-$(BUILD_DIR)/.gitconfig:
-	mkdir -p $(@D)
-	source .env; \
-	cat etc/.gitconfig \
-	| envsubst >$@
