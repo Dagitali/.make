@@ -21,7 +21,7 @@ lib := $(BUILD_DIR)/.$(shell)/lib/git
 
 # SECTION: PHONY TARGETS ==================================================== #
 
-## env: Install Git configuration files.
+## git: Install Git configuration files.
 .PHONY: git
 git: $(BUILD_DIR)/.gitconfig
 
