@@ -92,7 +92,7 @@ test: clean
 update: lib
 
 
-# SECTION: NON-PHONY TARGETS ================================================ #
+# SECTION: FILE TARGETS ===================================================== #
 
 .env:
 	$(eval git_credential_helper = $(if $(is_macos),osxkeychain,store))
