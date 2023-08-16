@@ -23,11 +23,11 @@ esc := \033
 
 # Setting the text intensity/emphasis of STDOUT.
 reset := $(esc)[0m
-bold := $(ESC)[1m
-dim := $(ESC)[2m
+bold := $(esc)[1m
+dim := $(esc)[2m
 
 # Setting the text color of STDOUT.
-fg_red := $(ESC)[0;31m
-fg_green := $(ESC)[0;32m
-fg_yellow := $(ESC)[1;33m
+fg_red := $(esc)[0;31m
+fg_green := $(esc)[0;32m
+fg_yellow := $(esc)[1;33m
 fc_cyan := $(esc)[0;36m
