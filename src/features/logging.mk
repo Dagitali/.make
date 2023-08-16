@@ -1,5 +1,5 @@
 # logging.mk
-# Setup
+# .make
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
