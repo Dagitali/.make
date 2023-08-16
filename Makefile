@@ -3,7 +3,7 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Faciliates automation for common project operations.
+# Faciliates automation for setting up Unix-based systems.
 # See https://www.gnu.org/software/make/manual/make.html.
 #
 # REFERENCES:
