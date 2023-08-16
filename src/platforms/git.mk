@@ -30,7 +30,7 @@ git: $(BUILD_DIR)/.gitconfig
 lib-git: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
 
 
-# SECTION: NON-PHONY TARGETS ================================================ #
+# SECTION: FILE TARGETS ===================================================== #
 
 $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh:
 	mkdir -p $(@D)
