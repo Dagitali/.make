@@ -3,7 +3,7 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Facilitate string formatting.
+# Facilitates string formatting.
 # See https://www.gnu.org/software/make/manual/make.html.
 #
 # REFERENCES:
