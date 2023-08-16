@@ -70,10 +70,6 @@ clean:
 .PHONY: env
 env: $(env)/secrets.env $(env)/settings.env
 
-## env: Install Git configuration files.
-.PHONY: git
-git: $(BUILD_DIR)/.gitconfig
-
 ## lib: Complete all installation activities.
 .PHONY: install
 install: .env env git lib
