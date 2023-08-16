@@ -16,11 +16,12 @@
 
 SHELL = /bin/bash
 
+export
+
 
 # SECTION: INCLUDES ========================================================= #
 
-include .env
-export
+include src/init.mk
 
 
 # SECTION: EXTERNAL VARIABLES =============================================== #
@@ -41,30 +42,10 @@ shell := $(notdir $(SHELL))
 env := $(BUILD_DIR)/.env
 lib := $(BUILD_DIR)/.$(shell)/lib
 
-### Formatting ###
-
-# C-style octal code representing an ASCI escape character.
-esc := \033
-
-# Setting the text intensity/emphasis of STDOUT.
-reset := $(esc)[0m
-
-# Setting the text color of STDOUT.
-fc_cyan := $(esc)[0;36m
-
 ### URLs ###
 
 github_base_url = https://raw.githubusercontent.com
 git_base_url = $(github_base_url)/git/git/HEAD
-
-
-# SECTION: MACROS =========================================================== #
-
-# "Targets" section line item of the "make" command's online help.
-define target
-$(fc_cyan)%-20s$(reset) %s
-endef
-export target
 
 
 # SECTION: PHONY TARGETS ==================================================== #
@@ -87,25 +68,6 @@ env: $(env)/secrets.env $(env)/settings.env
 ## env: Install Git configuration files.
 .PHONY: git
 git: $(BUILD_DIR)/.gitconfig
-
-## help: Show this help message.
-.PHONY: help
-help:
-# Use the makefile set as a data source to display a lexicographically
-# sorted, color-formatted list of targets.
-#
-# Note:
-# 1. "cat" outputs a space-delimited list of makefiles -- the main makefile
-#    (i.e., "Makefile") & secondary makefiles (i.e., "*.mk").
-# 2. "grep" filters makefiles for targets & their descriptions.
-	@echo 'usage: make [target]'
-	@echo
-	@echo 'targets:'
-	@cat $(MAKEFILE_LIST) \
-	| grep -E '^## [0-9a-zA-Z_-]+: .*$$' \
-	| sed -e 's/## //' \
-	| sort \
-	| awk -F: '{printf "  $(target)\n", $$1, $$2}'
 
 ## lib: Complete all installation activities.
 .PHONY: install
