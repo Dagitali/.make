@@ -70,7 +70,7 @@ clean:
 .PHONY: env
 env: $(env)/secrets.env $(env)/settings.env
 
-## lib: Complete all installation activities.
+## install: Complete all installation activities.
 .PHONY: install
 install: .env env git lib
 
