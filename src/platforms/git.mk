@@ -18,6 +18,10 @@
 
 lib := $(BUILD_DIR)/.$(shell)/lib/git
 
+### URLs ###
+
+git_base_url := $(gh_raw_url)/git/git/HEAD
+
 
 # SECTION: PHONY TARGETS ==================================================== #
 

@@ -32,4 +32,6 @@ include src/features/logging.mk
 
 include src/utilities/commands.mk
 
+include src/platforms/github.mk
+
 include src/platforms/git.mk
