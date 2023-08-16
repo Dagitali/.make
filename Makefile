@@ -64,7 +64,8 @@ all: help
 ## clean: Remove files/directories.
 .PHONY: clean
 clean:
-	rm -rf tmp
+	$(call msg,Removing all temporary project artifacts)
+	@rm -rf tmp
 
 ## env: Install shell environment variable files.
 .PHONY: env
@@ -81,7 +82,8 @@ lib: lib-git
 ## test: Run tests.
 .PHONY: test
 test: clean
-	make install BUILD_DIR=tmp
+	$(call msg,Testing key makefile targets)
+	@make install BUILD_DIR=tmp
 
 ## update: Pull latest changes to project.
 .PHONY: update
@@ -91,6 +93,7 @@ update: lib
 # SECTION: FILE TARGETS ===================================================== #
 
 .env:
+	$(call msg,Creating file "$@")
 	$(eval git_credential_helper = $(if $(is_macos),osxkeychain,store))
 	$(eval git_user_name = $(shell read -p "Full Name (Git): " var; echo $$var))
 	$(eval git_user_email = $(shell read -p "Email (Git): " var; echo $$var))
@@ -98,7 +101,8 @@ update: lib
 	| envsubst >$@
 
 $(env)/secrets.env $(env)/settings.env:
-	mkdir -p $(@D)
-	chmod 700 $(@D)
-	touch $@
-	chmod 600 $@
+	$(call msg,Creating file "$@")
+	@mkdir -p $(@D)
+	@chmod 700 $(@D)
+	@touch $@
+	@chmod 600 $@
