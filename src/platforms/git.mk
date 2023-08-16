@@ -34,12 +34,12 @@ lib-git: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
 
 $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh:
 	$(call msg,Creating file "$@")
-	@mkdir -p $(@D)
+	@$(mkdir) $(@D)
 	@$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
 
 $(BUILD_DIR)/.gitconfig:
 	$(call msg,Creating file "$@")
-	@mkdir -p $(@D)
+	@$(mkdir) $(@D)
 	@source .env; \
 	cat etc/.gitconfig \
 	| envsubst >$@
