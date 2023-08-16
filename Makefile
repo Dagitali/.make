@@ -31,13 +31,7 @@ BUILD_DIR ?= $(HOME)
 
 # SECTION: INTERNAL VARIABLES =============================================== #
 
-### Commands ###
-
-curl = curl --create-dirs --silent --output
-
 ### File System ###
-
-shell := $(notdir $(SHELL))
 
 env := $(BUILD_DIR)/.env
 
@@ -46,6 +40,8 @@ env := $(BUILD_DIR)/.env
 uname := $(shell uname)
 is_macos := $(filter Darwin, $(uname))
 is_linux := $(filter Linux, $(uname))
+
+shell := $(notdir $(SHELL))
 
 ### URLs ###
 
@@ -65,7 +61,7 @@ all: help
 .PHONY: clean
 clean:
 	$(call msg,Removing all temporary project artifacts)
-	@rm -rf tmp
+	@$(rm) tmp
 
 ## env: Install shell environment variable files.
 .PHONY: env
