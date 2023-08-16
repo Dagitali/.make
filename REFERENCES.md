@@ -14,71 +14,118 @@ developing or maintaining [this project](README.md).
 
 1. <https://stackoverflow.com/questions/22268952/what-is-the-difference-between-yaml-and-yml-extension>
 
+## Open Source
+
+Guides
+
+1. <https://opensource.guide>
+
+Licensing
+
+1. <https://choosealicense.com>
+
+## Platforms: `curl`
+
+CLI
+
+1. <https://linux.die.net/man/1/curl>
+
+General
+
+1. <https://en.wikipedia.org/wiki/CURL>
+
+Tips & Tricks
+
+1. <https://gist.github.com/joyrexus/85bf6b02979d8a7b0308>
+2. <https://curl.haxx.se/docs/httpscripting.html>
+3. <https://stackoverflow.com/questions/32488162/curl-suppress-response-body>
+
 ## Platforms: EditorConfig
 
 Examples
 
 1. <https://github.com/jokeyrhyme/standard-editorconfig>
 
-Official
+General
 
 1. <https://editorconfig.org>
 
 ## Platforms: `git`
 
-3rd-Party
+Configuration
 
 1. <https://fileinfo.com/extension/gitattributes>
-2. <https://gitforwindows.org>
-3. <https://github.com/nvie/gitflow>
-4. <https://gitignore.io>
-
-Official
-
-1. <https://git-scm.com>
 2. <https://git-scm.com/docs/gitattributes>
 3. <https://git-scm.com/docs/gitignore>
-4. <https://github.com/git/git>
+4. <https://gitignore.io>
+
+General
+
+1. <https://git-scm.com>
+2. <https://gitforwindows.org>
+3. <https://github.com/git/git>
+
+Manuals
+
+1. <https://git-scm.com/book>
+
+Setup
+
+1. <https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config>
+2. <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>
+
+Tags
+
+1. <https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag>
+
+Tips & Tricks
+
+1. <https://stackoverflow.com/questions/63241071/automate-git-merge-commit-message>
 
 ## Platforms: `git flow`
 
-3rd-Party
-
 1. <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>
-2. <https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac>
-3. <https://medium.com/@roalcantara/a-guide-to-improve-the-git-hub-flow-and-commits-messages-b495461e1115>
-
-Official
-
-1. <https://nvie.com/posts/a-successful-git-branching-model>
-2. <https://git-flow.readthedocs.io/en/latest/releases.html>
+2. <https://github.com/nvie/gitflow>
+3. <https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac>
+4. <https://medium.com/@roalcantara/a-guide-to-improve-the-git-hub-flow-and-commits-messages-b495461e1115>
+5. <https://nvie.com/posts/a-successful-git-branching-model>
+6. <https://git-flow.readthedocs.io/en/latest/releases.html>
 
 ## Platforms: GitHub
 
+Community
+
 1. <https://docs.github.com/en/github/building-a-strong-community>
-2. <https://lab.github.com/githubtraining/introduction-to-github>
+
+Training
+
+1. <https://lab.github.com/githubtraining/introduction-to-github>
 
 ## Platforms: `make`
 
-3rd-Party
+CLI
+
+1. <https://linux.die.net/man/1/make>
+
+General
+
+1. <https://www.gnu.org/software/make>
+2. <https://en.wikipedia.org/wiki/Make_(software)>
+
+Guides/Manuals
 
 1. <https://www.cl.cam.ac.uk/teaching/0910/UnixTools/make.pdf>
 2. <https://www.oreilly.com/openbook/make3/book>
-3. <https://en.wikipedia.org/wiki/Make_(software)>
-
-CLI
-
-1. https://linux.die.net/man/1/make
-
-Official
-
-1. <https://www.gnu.org/software/make>
-2. <https://www.gnu.org/software/make/manual/make.html>
+3. <https://www.gnu.org/software/make/manual/make.html>
 
 Style
 
 1. <https://clarkgrubb.com/makefile-style-guide>
 2. <https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html>
+
+Tips & Tricks
+
+1. <https://unix.stackexchange.com/questions/100786/why-does-diff-fail-when-invoked-from-a-makefile>
 
 ## Platforms: `pre-commit`
 
@@ -86,7 +133,7 @@ Examples
 
 1. <https://github.com/ScribeMD/pre-commit-hooks/blob/main/.pre-commit-config.yaml>
 
-Official
+General
 
 1. <https://github.com/pre-commit/pre-commit>
 2. <https://pre-commit.com>
@@ -99,6 +146,11 @@ Continuous Integration/Development (CI/CD)
 2. <https://naereen.github.io/badges>
 3. <https://shields.io/category/version>
 4. <https://en.wikipedia.org/wiki/CI/CD>
+
+Logging
+
+1. <https://www.scalyr.com/blog/log-formatting-best-practices-readable>
+2. <https://en.wikipedia.org/wiki/ISO_8601>
 
 Versioning
 
