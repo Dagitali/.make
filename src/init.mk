@@ -32,6 +32,8 @@ include src/features/formatting.mk
 include src/features/helping.mk
 include src/features/logging.mk
 
+include src/platforms/unix.mk
+
 include src/utilities/commands.mk
 
 include src/platforms/github.mk

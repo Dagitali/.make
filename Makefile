@@ -36,14 +36,6 @@ BUILD_DIR ?= $(HOME)
 
 env := $(BUILD_DIR)/.env
 
-### Operating System ###
-
-uname := $(shell uname)
-is_macos := $(filter Darwin, $(uname))
-is_linux := $(filter Linux, $(uname))
-
-shell := $(notdir $(SHELL))
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 
