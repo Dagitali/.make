@@ -29,9 +29,9 @@ git_base_url := $(gh_raw_url)/git/git/HEAD
 .PHONY: git
 git: $(BUILD_DIR)/.gitconfig
 
-## lib-git: Install Git-related shell libraries.
-.PHONY: lib-git
-lib-git: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
+## git-lib: Install Git-related shell libraries.
+.PHONY: git-lib
+git-lib: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
 
 
 # SECTION: FILE TARGETS ===================================================== #
