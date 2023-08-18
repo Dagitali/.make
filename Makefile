@@ -61,7 +61,7 @@ install: .env env git lib
 
 ## lib: Install shell libraries.
 .PHONY: lib
-lib: git-lib
+lib: bash-lib git-lib
 
 ## test: Run tests.
 .PHONY: test
