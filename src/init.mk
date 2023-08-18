@@ -3,7 +3,9 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Centralizes how environment variables and secondary makefiles are included.
+# Decouples dependency inclusion (environment variables, secondary makefiles)
+# from the main makefile. These dependencies must be included in the order
+# specified below.
 # See https://www.gnu.org/software/make/manual/make.html.
 #
 # REFERENCES:

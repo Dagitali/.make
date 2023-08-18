@@ -1,15 +1,16 @@
 # .make
 
-A makefile for setting up Unix-based software environments.
+An integrated set of sharable, reusable makefiles for setting up and managing
+Unix-based software environments and projects.
 
 ## Introduction
 
-.make is intended to simplify setting up new users on Unix-based systems. This
-includes Unix variants such as Linux and macOS. It uses the [`make`][make] command to
-automate setup customization activities:
+.make is intended to simplify software environment/project setups and management
+on Unix-like systems, particularly Linux and macOS hosts. It uses the [`make`][make]
+command to automate activities such as:
 
-- Setting shell environment variables;
-- Sourcing custom and 3rd-party shell scripts.
+- Installing 3rd-party shell scripts;
+- Enhancing how Git is used.
 
 As this project matures, its automations are expected to grow, thereby speeding
 up setup customization.
@@ -39,7 +40,7 @@ stored in a user's home folder or within the software project itself.
 
 ## Getting Started
 
-.make supports 2 UNIX-based operating systems:
+.make supports 2 UNIX-like operating systems:
 
 - [Linux][Linux]
 - [macOS][macOS]
