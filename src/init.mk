@@ -24,19 +24,20 @@
 ### Settings ###
 
 -include $(HOME)/.env/settings.env
--include .env
+-include $(MAKE_HOME)/.env
 
 ### Secondary Makefiles ###
 
-include src/features/formatting.mk
-include src/features/helping.mk
-include src/features/logging.mk
+include $(MAKE_HOME)/src/features/formatting.mk
+include $(MAKE_HOME)/src/features/helping.mk
+include $(MAKE_HOME)/src/features/logging.mk
 
-include src/platforms/unix.mk
+include $(MAKE_HOME)/src/platforms/unix.mk
 
-include src/utilities/commands.mk
+include $(MAKE_HOME)/src/utilities/commands.mk
 
-include src/platforms/github.mk
+include $(MAKE_HOME)/src/platforms/github.mk
 
-include src/platforms/bash.mk
-include src/platforms/git.mk
+include $(MAKE_HOME)/src/platforms/bash.mk
+include $(MAKE_HOME)/src/platforms/docker.mk
+include $(MAKE_HOME)/src/platforms/git.mk

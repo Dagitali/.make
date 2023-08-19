@@ -23,6 +23,7 @@ export
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
 BUILD_DIR ?= $(HOME)
+MAKE_HOME ?= .
 
 
 # SECTION: INTERNAL VARIABLES =============================================== #
@@ -34,7 +35,7 @@ env := $(BUILD_DIR)/.env
 
 # SECTION: INCLUDES ========================================================= #
 
-include src/init.mk
+include $(MAKE_HOME)/src/init.mk
 
 
 # SECTION: PHONY TARGETS ==================================================== #
