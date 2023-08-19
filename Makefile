@@ -26,13 +26,6 @@ BUILD_DIR ?= $(HOME)
 MAKE_HOME ?= .
 
 
-# SECTION: INTERNAL VARIABLES =============================================== #
-
-### File System ###
-
-env := $(BUILD_DIR)/.env
-
-
 # SECTION: INCLUDES ========================================================= #
 
 include $(MAKE_HOME)/src/init.mk
@@ -52,10 +45,6 @@ clean:
 	$(call msg,Removing all temporary project artifacts)
 	@$(rm) tmp
 
-## env: Install shell environment variable files.
-.PHONY: env
-env: $(env)/secrets.env $(env)/settings.env
-
 ## install: Complete all installation activities.
 .PHONY: install
 install: .env env git lib
@@ -73,21 +62,3 @@ test: clean
 ## update: Pull latest changes to project.
 .PHONY: update
 update: lib
-
-
-# SECTION: FILE TARGETS ===================================================== #
-
-.env:
-	$(call msg,Creating file "$@")
-	$(eval git_credential_helper = $(if $(is_macos),osxkeychain,store))
-	$(eval git_user_name = $(shell read -p "Full Name (Git): " var; echo $$var))
-	$(eval git_user_email = $(shell read -p "Email (Git): " var; echo $$var))
-	@cat etc/.env \
-	| envsubst >$@
-
-$(env)/secrets.env $(env)/settings.env:
-	$(call msg,Creating file "$@")
-	@mkdir -p $(@D)
-	@chmod 700 $(@D)
-	@touch $@
-	@chmod 600 $@
