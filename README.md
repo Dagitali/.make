@@ -10,7 +10,8 @@ on Unix-like systems, particularly Linux and macOS hosts. It uses the [`make`][m
 command to automate activities such as:
 
 - Installing 3rd-party shell scripts;
-- Enhancing how Git is used.
+- Enhancing how Git is used;
+- Starting/stopping Docker containers.
 
 As this project matures, its automations are expected to grow, thereby speeding
 up setup customization.
