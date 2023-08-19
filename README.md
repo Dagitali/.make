@@ -64,19 +64,31 @@ the optional installation of the following toolchain is encouraged:
 
 ### Installation
 
-.make is installable as a single [makefile][makefile]. For most use cases, the appropriate
-installation target for this makefile will be a user's home directory, like as
-follows:
-
 ```bash
 cd ~
 git clone https://github.com/dagitali/.make
 ```
 
+.make is installable as a Git clone. For individuals, we recommend cloning in
+your home directory.
+
+```bash
+cd ~
+git clone https://github.com/dagitali/.make.git
+```
+
+Alternatively, teams may prefer to clone .make to a shared, visible directory,
+such as `make`.
+
+```bash
+cd <path_to_bash_parent_dir>
+git clone https://github.com/dagitali/.make.git make
+```
+
 ### Usage
 
 .make works by running the `make` command from the directory where the project's
-makefile was installed (`~/.make` by default). The command's basic syntax is:
+makefile was installed (e.g., `~/.make`). The command's basic syntax is:
 
 ```bash
 make [target]
