@@ -32,6 +32,7 @@ include $(MAKE_HOME)/src/features/formatting.mk
 include $(MAKE_HOME)/src/features/helping.mk
 include $(MAKE_HOME)/src/features/logging.mk
 
+include $(MAKE_HOME)/src/platforms/env.mk
 include $(MAKE_HOME)/src/platforms/unix.mk
 
 include $(MAKE_HOME)/src/utilities/commands.mk
