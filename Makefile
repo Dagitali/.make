@@ -20,15 +20,9 @@ SHELL = /bin/bash
 export
 
 
-# SECTION: EXTERNAL VARIABLES =============================================== #
-
-BUILD_DIR ?= $(HOME)
-MAKE_HOME ?= .
-
-
 # SECTION: INCLUDES ========================================================= #
 
-include $(MAKE_HOME)/src/init.mk
+include src/init.mk
 
 
 # SECTION: PHONY TARGETS ==================================================== #

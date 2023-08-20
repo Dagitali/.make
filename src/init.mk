@@ -15,15 +15,21 @@
 # 4. https://web.mit.edu/gnu/doc/html/make_6.html
 
 
+# SECTION: EXTERNAL VARIABLES =============================================== #
+
+BUILD_DIR ?= $(HOME)
+MAKE_HOME ?= .
+
+
 # SECTION: INCLUDES ======================================================== #
 
 ### Secrets ###
 
--include $(HOME)/.env/secrets.env
+-include $(BUILD_DIR)/.env/secrets.env
 
 ### Settings ###
 
--include $(HOME)/.env/settings.env
+-include $(BUILD_DIR)/.env/settings.env
 -include $(MAKE_HOME)/.env
 
 ### Secondary Makefiles ###
