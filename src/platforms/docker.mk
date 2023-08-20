@@ -21,8 +21,8 @@ DOCKER_COMPOSE_CFG ?= docker-compose.yaml
 
 # Executes `docker compose` command.
 define docker
-cd "$(dir $(1))"; \
-docker compose --file "$(notdir $(1))" $(2); \
+cd "$(dir $(DOCKER_COMPOSE_CFG))"; \
+docker compose --file "$(notdir $(DOCKER_COMPOSE_CFG))" $(1); \
 cd -
 endef
 
@@ -33,10 +33,10 @@ endef
 .PHONY: docker-down
 docker-down:
 	$(call msg,Stopping and removing Docker container)
-	$(call docker,$(DOCKER_COMPOSE_CFG),down --remove-orphans)
+	@$(call docker,down --remove-orphans)
 
 ## docker-up: Creates and starts Docker container
 .PHONY: docker-up
 docker-up:
 	$(call msg,Creating and starting Docker container)
-	$(call docker,$(DOCKER_COMPOSE_CFG),up --detach)
+	@$(call docker,up --detach)
