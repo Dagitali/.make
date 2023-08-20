@@ -12,7 +12,7 @@
 # 3. https://web.mit.edu/gnu/doc/html/make_6.html
 
 
-# SECTION: INTERNAL VARIABLES =============================================== #
+# SECTION: EXTERNAL VARIABLES =============================================== #
 
 DOCKER_COMPOSE_CFG ?= docker-compose.yaml
 
