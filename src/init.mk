@@ -15,6 +15,12 @@
 # 4. https://web.mit.edu/gnu/doc/html/make_6.html
 
 
+# SECTION: EXTERNAL VARIABLES =============================================== #
+
+BUILD_DIR ?= $(HOME)
+MAKE_HOME ?= .
+
+
 # SECTION: INCLUDES ======================================================== #
 
 ### Secrets ###
