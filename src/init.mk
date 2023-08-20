@@ -25,11 +25,11 @@ MAKE_HOME ?= .
 
 ### Secrets ###
 
--include $(HOME)/.env/secrets.env
+-include $(BUILD_DIR)/.env/secrets.env
 
 ### Settings ###
 
--include $(HOME)/.env/settings.env
+-include $(BUILD_DIR)/.env/settings.env
 -include $(MAKE_HOME)/.env
 
 ### Secondary Makefiles ###
