@@ -14,7 +14,13 @@
 
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
-DOCKER_COMPOSE_CFG ?= docker-compose.yaml
+DOCKER_IMAGE_NAME ?=
+
+ifeq ($(DOCKER_IMAGE_NAME),)
+	DOCKER_COMPOSE_CFG ?= docker-compose.yaml
+else
+	DOCKER_COMPOSE_CFG ?= docker-compose.$(DOCKER_IMAGE_NAME).yaml
+endif
 
 
 # SECTION: MACROS =========================================================== #
