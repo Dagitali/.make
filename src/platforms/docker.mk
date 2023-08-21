@@ -31,12 +31,19 @@ endef
 
 ## docker-down: Stops and removes Docker container
 .PHONY: docker-down
-docker-down:
-	$(call msg,Stopping and removing Docker container)
+docker-down: $(DOCKER_COMPOSE_CFG)
+	$(call msg,Stopping and removing Docker container defined in $<)
 	@$(call docker,down --remove-orphans)
 
 ## docker-up: Creates and starts Docker container
 .PHONY: docker-up
-docker-up:
-	$(call msg,Creating and starting Docker container)
+docker-up: $(DOCKER_COMPOSE_CFG)
+	$(call msg,Creating and starting Docker container defined in $<)
 	@$(call docker,up --detach)
+
+
+# SECTION: FILE TARGETS ===================================================== #
+
+$(DOCKER_COMPOSE_CFG):
+	@$(mkdir) $@; \
+	touch $@
