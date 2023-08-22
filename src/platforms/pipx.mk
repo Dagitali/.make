@@ -20,10 +20,10 @@ pipx:
 ifeq (,$(shell which pipx))
 	$(call msg,Installing command "$@")
 	ifeq (Darwin,$(uname))
-	@brew install pipx
+	@brew install $@
 	@pipx ensurepath
 	else
-	@python3 -m pip install --user pipx
+	@python3 -m pip install --user $@
 	@python3 -m pipx ensurepath
 	endif
 endif
