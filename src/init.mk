@@ -58,5 +58,6 @@ include $(MAKE_HOME)/src/platforms/brew.mk
 include $(MAKE_HOME)/src/platforms/pipx.mk
 
 include $(MAKE_HOME)/src/platforms/bash.mk
+include $(MAKE_HOME)/src/platforms/cookiecutter.mk
 include $(MAKE_HOME)/src/platforms/docker.mk
 include $(MAKE_HOME)/src/platforms/git.mk
