@@ -12,17 +12,6 @@
 # 3. https://web.mit.edu/gnu/doc/html/make_6.html
 
 
-# SECTION: INTERNAL VARIABLES =============================================== #
-
-### File System ###
-
-lib := $(BUILD_DIR)/.$(shell)/lib/git
-
-### URLs ###
-
-git_base_url := $(gh_raw_url)/git/git/HEAD
-
-
 # SECTION: PHONY TARGETS ==================================================== #
 
 ## git: Install Git configuration files.
@@ -31,15 +20,16 @@ git: $(BUILD_DIR)/.gitconfig
 
 ## git-lib: Install Git-related shell libraries.
 .PHONY: git-lib
-git-lib: $(lib)/git-completion.$(shell) $(lib)/git-prompt.sh
+git-lib: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 
 # SECTION: FILE TARGETS ===================================================== #
 
-$(lib)/git-completion.$(shell) $(lib)/git-prompt.sh:
+$(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
 	$(call msg,Creating file "$@")
+	$(eval url = $(gh_raw_url)/git/git/HEAD/contrib/completion/$(@F))
 	@$(mkdir) $(@D)
-	@$(curl) $@ $(git_base_url)/contrib/completion/$(@F)
+	@$(curl) --create-dirs --output $@ $(url)
 
 $(BUILD_DIR)/.gitconfig:
 	$(call msg,Creating file "$@")
