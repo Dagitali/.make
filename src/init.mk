@@ -54,6 +54,8 @@ include $(MAKE_HOME)/src/utilities/commands.mk
 
 include $(MAKE_HOME)/src/platforms/github.mk
 
+include $(MAKE_HOME)/src/platforms/brew.mk
+
 include $(MAKE_HOME)/src/platforms/bash.mk
 include $(MAKE_HOME)/src/platforms/docker.mk
 include $(MAKE_HOME)/src/platforms/git.mk
