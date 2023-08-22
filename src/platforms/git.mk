@@ -27,9 +27,9 @@ git-lib: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
 	$(call msg,Creating file "$@")
-	$(eval base_url = $(gh_raw_url)/git/git/HEAD)
+	$(eval url = $(gh_raw_url)/git/git/HEAD/contrib/completion/$(@F))
 	@$(mkdir) $(@D)
-	@$(curl) $@ $(base_url)/contrib/completion/$(@F)
+	@$(curl) --create-dirs --output $@ $(url)
 
 $(BUILD_DIR)/.gitconfig:
 	$(call msg,Creating file "$@")
