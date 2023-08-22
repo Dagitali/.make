@@ -14,6 +14,8 @@
 
 # SECTION: FILE TARGETS ===================================================== #
 
+## brew: Install Homebrew.
+.PHONY: brew
 brew:
 ifeq (,$(shell which brew))
 	$(call msg,Installing command "$@")
