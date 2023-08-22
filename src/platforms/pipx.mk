@@ -19,11 +19,11 @@
 pipx:
 ifeq (,$(shell which pipx))
 	$(call msg,Installing command "$@")
-	ifeq (Darwin,$(uname))
+ifeq (Darwin,$(uname))
 	@brew install $@
 	@pipx ensurepath
-	else
+else
 	@python3 -m pip install --user $@
 	@python3 -m pipx ensurepath
-	endif
+endif
 endif

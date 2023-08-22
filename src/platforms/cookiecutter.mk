@@ -19,9 +19,9 @@
 cookiecutter:
 ifeq (,$(shell which cookiecutter))
 	$(call msg,Installing command "$@")
-	ifeq (Darwin,$(uname))
+ifeq (Darwin,$(uname))
 	@brew install $@
-	else
+else
 	@pipx install $@
-	endif
+endif
 endif
