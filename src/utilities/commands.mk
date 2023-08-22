@@ -29,7 +29,7 @@ v := -v
 endif
 
 # Command prefix for transferring data.
-curl := curl $(s) --fail --show-error --create-dirs --output
+curl := curl $(s) --fail --show-error
 
 # Command prefix for creating directores.
 mkdir := mkdir $(v) -p
