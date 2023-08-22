@@ -14,7 +14,7 @@ command to automate activities such as:
 - Starting/stopping Docker containers.
 
 As this project matures, its automations are expected to grow, thereby speeding
-up setup customization.
+up environment/project setup customization and management.
 
 ## Background
 
@@ -64,11 +64,6 @@ the optional installation of the following toolchain is encouraged:
 - [pre-commit][pre-commit] 3.3.3 or higher
 
 ### Installation
-
-```bash
-cd ~
-git clone https://github.com/dagitali/.make
-```
 
 .make is installable as a Git clone. For individuals, we recommend cloning in
 your home directory.
