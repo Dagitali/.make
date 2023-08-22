@@ -17,8 +17,17 @@
 
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
+### File System ###
+
 BUILD_DIR ?= $(HOME)
 MAKE_HOME ?= .
+
+
+# SECTION: INTERNAL VARIABLES =============================================== #
+
+### File System ###
+
+lib := $(BUILD_DIR)/.$(shell)/lib
 
 
 # SECTION: INCLUDES ======================================================== #
