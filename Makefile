@@ -10,7 +10,7 @@
 # 1. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
 # 2. https://www.gnu.org/software/make
 # 3. https://www.gnu.org/software/make/manual/html_node/Include.html
-# 4. https://web.mit.edu/gnu/doc/html/make_6.html
+# 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
 
 # SECTION: MAKE OPTIONS ===================================================== #
