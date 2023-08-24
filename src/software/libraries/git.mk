@@ -3,7 +3,8 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Facilitates installing Bash script library for enhancing GIt usage.
+# Facilitates installing a Bash script library for enhancing "git" command
+# usage.
 # See https://www.gnu.org/software/make/manual/make.html.
 #
 # REFERENCES:
