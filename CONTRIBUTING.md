@@ -3,7 +3,7 @@
 Version-controllable contributions toward improving [this project](README.md) (its source
 code, documentation, etc.) are welcome via GitHub's [pull request][PR] process. By
 submitting a merge request, you acknowledge and agree to licensing your
-contribution to [dagitali.com][owner].
+contribution to [Dagitali LLC][owner].
 
 When contributing to this repository, please first discuss the change you wish
 to make via issue, email, or any other method with the owners of this repository
