@@ -53,10 +53,11 @@ include $(MAKE_HOME)/src/utilities/commands.mk
 
 include $(MAKE_HOME)/src/services/github.mk
 
-include $(MAKE_HOME)/src/platforms/brew.mk
-include $(MAKE_HOME)/src/platforms/pipx.mk
+include $(MAKE_HOME)/src/software/installers/brew.mk
+include $(MAKE_HOME)/src/software/installers/pipx.mk
 
-include $(MAKE_HOME)/src/platforms/bash.mk
-include $(MAKE_HOME)/src/platforms/cookiecutter.mk
-include $(MAKE_HOME)/src/platforms/docker.mk
-include $(MAKE_HOME)/src/platforms/git.mk
+include $(MAKE_HOME)/src/software/libraries/bash.mk
+
+include $(MAKE_HOME)/src/software/tools/cookiecutter.mk
+include $(MAKE_HOME)/src/software/tools/docker.mk
+include $(MAKE_HOME)/src/software/tools/git.mk
