@@ -52,7 +52,7 @@ include $(MAKE_HOME)/src/platforms/unix.mk
 
 include $(MAKE_HOME)/src/utilities/commands.mk
 
-include $(MAKE_HOME)/src/platforms/github.mk
+include $(MAKE_HOME)/src/services/github.mk
 
 include $(MAKE_HOME)/src/platforms/brew.mk
 include $(MAKE_HOME)/src/platforms/pipx.mk
