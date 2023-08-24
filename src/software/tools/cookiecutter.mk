@@ -3,7 +3,7 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Facilitates Cookiecutter activities.
+# Facilitates installing the "cookiecutter" command.
 # See https://cookiecutter.readthedocs.io/en/stable/installation.html.
 #
 # REFERENCES:
