@@ -57,6 +57,7 @@ include $(MAKE_HOME)/src/software/installers/brew.mk
 include $(MAKE_HOME)/src/software/installers/pipx.mk
 
 include $(MAKE_HOME)/src/software/libraries/bash.mk
+include $(MAKE_HOME)/src/software/libraries/git.mk
 
 include $(MAKE_HOME)/src/software/tools/cookiecutter.mk
 include $(MAKE_HOME)/src/software/tools/docker.mk

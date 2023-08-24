@@ -3,7 +3,7 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Facilitates configuring the "git" command.
+# Facilitates installing Bash script library for enhancing GIt usage.
 # See https://www.gnu.org/software/make/manual/make.html.
 #
 # REFERENCES:
@@ -14,16 +14,15 @@
 
 # SECTION: PHONY TARGETS ==================================================== #
 
-## git: Install Git configuration files.
-.PHONY: git
-git: $(BUILD_DIR)/.gitconfig
+## git-lib: Install Git-related shell libraries.
+.PHONY: git-lib
+git-lib: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
 
 
 # SECTION: FILE TARGETS ===================================================== #
 
-$(BUILD_DIR)/.gitconfig:
+$(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh:
 	$(call msg,Creating file "$@")
+	$(eval url = $(gh_raw_url)/git/git/HEAD/contrib/completion/$(@F))
 	@$(mkdir) $(@D)
-	@source .env; \
-	cat etc/.gitconfig \
-	| envsubst >$@
+	@$(curl) --create-dirs --output $@ $(url)
