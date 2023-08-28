@@ -12,9 +12,9 @@
 # 3. https://web.mit.edu/gnu/doc/html/make_1.html
 
 
-# SECTION: FILE TARGETS ===================================================== #
+# SECTION: PHONY TARGETS ==================================================== #
 
-## brew: Install Homebrew.
+## brew: Install "brew" command.
 .PHONY: brew
 brew:
 ifeq (,$(shell which brew))
