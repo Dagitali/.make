@@ -28,7 +28,7 @@ postgres_opts += -d $(POSTGRES_DB)
 .PHONY: postgresql
 postgresql:
 ifeq (,$(shell which psql))
-	$(call msg,Installing command "$@")
+	$(call msg,Installing PostgreSQL platform)
 ifeq (Darwin,$(uname))
 	@brew install $@@15
 endif
