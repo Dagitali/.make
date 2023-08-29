@@ -73,3 +73,4 @@ include $(MAKE_HOME)/src/software/libraries/git.mk
 include $(MAKE_HOME)/src/software/tools/cookiecutter.mk
 include $(MAKE_HOME)/src/software/tools/docker.mk
 include $(MAKE_HOME)/src/software/tools/git.mk
+include $(MAKE_HOME)/src/software/tools/postgres.mk
