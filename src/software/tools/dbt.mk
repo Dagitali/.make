@@ -4,15 +4,15 @@
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
 # Facilitates installing the "dbt" command; abstracts "dbt" command activities.
-# See https://docs.getdbt.com/docs/core/homebrew-install.
 #
-# REFERENCES:
-# 1. https://docs.getdbt.com/docs/running-a-dbt-project/run-your-dbt-projects
-# 2. https://github.com/dbt-labs/dbt-core/blob/main/Makefile
-# 3. https://github.com/dbt-labs/dbt-utils/blob/main/Makefile
-# 4. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
-# 5. https://www.gnu.org/software/make
-# 6. https://web.mit.edu/gnu/doc/html/make_1.html
+# See:
+# 1. https://docs.getdbt.com/docs/core/homebrew-install
+# 2. https://docs.getdbt.com/docs/running-a-dbt-project/run-your-dbt-projects
+# 3. https://github.com/dbt-labs/dbt-core/blob/main/Makefile
+# 4. https://github.com/dbt-labs/dbt-utils/blob/main/Makefile
+# 5. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
+# 6. https://www.gnu.org/software/make
+# 7. https://web.mit.edu/gnu/doc/html/make_1.html
 
 
 # SECTION: PHONY TARGETS ==================================================== #

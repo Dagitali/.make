@@ -5,12 +5,12 @@
 #
 # Facilitates installing the PostgreSQL platform; abstracts command activities
 # for using PostgreSQL.
-# See https://www.postgresql.org/download/macosx.
 #
-# REFERENCES:
+# See:
 # 1. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
 # 2. https://www.gnu.org/software/make
 # 3. https://web.mit.edu/gnu/doc/html/make_1.html
+# 4. https://www.postgresql.org/download/macosx
 
 
 # SECTION: INTERNAL VARIABLES =============================================== #
