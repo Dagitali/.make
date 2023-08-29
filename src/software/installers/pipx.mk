@@ -4,12 +4,12 @@
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
 # Facilitates pipx activities.
-# See https://pypa.github.io/pipx/installation/.
 #
-# REFERENCES:
-# 1. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
-# 2. https://www.gnu.org/software/make
-# 3. https://web.mit.edu/gnu/doc/html/make_1.html
+# See:
+# 1. https://pypa.github.io/pipx/installation
+# 2. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
+# 3. https://www.gnu.org/software/make
+# 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
 
 # SECTION: PHONY TARGETS ==================================================== #
