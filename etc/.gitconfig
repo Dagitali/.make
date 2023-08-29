@@ -5,7 +5,7 @@
 #
 # An optional Git configuration file. Defines attributes per pathname.
 #
-# REFERENCES:
+# See:
 # 1. https://git-scm.com/docs/git-config
 # 2. https://gist.github.com/Wirone/5cc2f380db031a9d94f4eb449db8c72a
 

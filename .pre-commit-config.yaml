@@ -11,7 +11,7 @@
 # reviewers to focus on the architecture of a change while not wasting time
 # with trivial style nitpicks.
 #
-# REFERENCES:
+# See:
 # 1. https://pre-commit.com
 # 2. https://pre-commit.com/hooks.html
 # 3. https://pre-commit.com/index.html#plugins

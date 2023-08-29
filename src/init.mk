@@ -6,13 +6,13 @@
 # Decouples dependency inclusion (environment variables, secondary makefiles)
 # from the main makefile. These dependencies must be included in the order
 # specified below.
-# See https://www.gnu.org/software/make/manual/make.html.
 #
-# REFERENCES:
+# See:
 # 1. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
 # 2. https://www.gnu.org/software/make
 # 3. https://www.gnu.org/software/make/manual/html_node/Include.html
-# 4. https://web.mit.edu/gnu/doc/html/make_1.html
+# 4. https://www.gnu.org/software/make/manual/make.html
+# 5. https://web.mit.edu/gnu/doc/html/make_1.html
 
 
 # SECTION: EXTERNAL VARIABLES =============================================== #

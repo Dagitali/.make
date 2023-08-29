@@ -5,7 +5,7 @@
 #
 # An optional Git configuration file. Defines attributes per pathname.
 #
-# REFERENCES:
+# See:
 # 1. https://fileinfo.com/extension/gitattributes
 # 2. https://git-scm.com/docs/gitattributes
 
