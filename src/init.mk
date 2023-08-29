@@ -29,6 +29,16 @@ MAKE_HOME ?= .
 
 lib := $(BUILD_DIR)/.$(shell)/lib
 
+### Operating System (OS) ###
+
+uname := $(shell uname)
+is_macos := $(filter Darwin, $(uname))
+is_linux := $(filter Linux, $(uname))
+
+### Shell ###
+
+shell := $(notdir $(SHELL))
+
 
 # SECTION: INCLUDES ======================================================== #
 
@@ -47,7 +57,6 @@ include $(MAKE_HOME)/src/features/formatting.mk
 include $(MAKE_HOME)/src/features/helping.mk
 include $(MAKE_HOME)/src/features/logging.mk
 
-include $(MAKE_HOME)/src/utilities/unix.mk
 include $(MAKE_HOME)/src/utilities/env.mk
 include $(MAKE_HOME)/src/utilities/commands.mk
 
