@@ -53,6 +53,8 @@ shell := $(notdir $(SHELL))
 
 ### Secondary Makefiles ###
 
+include $(MAKE_HOME)/src/unames/$(uname).mk
+
 include $(MAKE_HOME)/src/features/formatting.mk
 include $(MAKE_HOME)/src/features/helping.mk
 include $(MAKE_HOME)/src/features/logging.mk
