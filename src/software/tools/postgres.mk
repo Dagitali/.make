@@ -3,7 +3,8 @@
 #
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
-# Abstracts command activities for PostgreSQL.
+# Facilitates installing the PostgreSQL platform; abstracts command activities
+# for using PostgreSQL.
 # See https://www.postgresql.org/download/macosx.
 #
 # REFERENCES:
