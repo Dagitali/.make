@@ -4,7 +4,7 @@
 # Copyright © 2023 Dagitali LLC. All rights reserved.
 #
 # Facilitates installing the "tree" command.
-# See https://cookiecutter.readthedocs.io/en/stable/installation.html.
+# See https://formulae.brew.sh/formula/tree.
 #
 # REFERENCES:
 # 1. https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html
