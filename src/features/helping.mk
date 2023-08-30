@@ -11,14 +11,12 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: MACROS =========================================================== #
 
 # "Targets" section line item of the "make" command's online help.
 define target
 $(fc_cyan)%-20s$(reset) %s
 endef
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 

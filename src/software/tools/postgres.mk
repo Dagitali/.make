@@ -12,7 +12,6 @@
 # 3. https://web.mit.edu/gnu/doc/html/make_1.html
 # 4. https://www.postgresql.org/download/macosx
 
-
 # SECTION: INTERNAL VARIABLES =============================================== #
 
 # Command options
@@ -20,7 +19,6 @@ postgres_opts = -h $(POSTGRES_HOST)
 postgres_opts += -U $(POSTGRES_USER)
 postgres_opts += -p $(POSTGRES_PORT)
 postgres_opts += -d $(POSTGRES_DB)
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 
