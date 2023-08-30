@@ -11,13 +11,11 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: PHONY TARGETS ==================================================== #
 
 ## git: Install Git configuration files.
 .PHONY: git
 git: $(BUILD_DIR)/.gitconfig
-
 
 # SECTION: FILE TARGETS ===================================================== #
 

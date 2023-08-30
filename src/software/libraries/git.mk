@@ -12,13 +12,11 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: PHONY TARGETS ==================================================== #
 
 ## git-lib: Install Git-related shell libraries.
 .PHONY: git-lib
 git-lib: $(lib)/git/git-completion.$(shell) $(lib)/git/git-prompt.sh
-
 
 # SECTION: FILE TARGETS ===================================================== #
 

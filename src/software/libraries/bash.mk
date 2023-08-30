@@ -11,7 +11,6 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: INTERNAL VARIABLES =============================================== #
 
 ### File System ###
@@ -22,13 +21,11 @@ bash_dir := $(BUILD_DIR)/.bash
 
 bash_base_url := $(gh_origin_url)/dagitali/.bash.git
 
-
 # SECTION: PHONY TARGETS ==================================================== #
 
 ## bash-lib: Install Bash libraries.
 .PHONY: bash-lib
 bash-lib: $(bash_dir)/README.md
-
 
 # SECTION: FILE TARGETS ===================================================== #
 
