@@ -12,18 +12,15 @@
 # 4. https://www.gnu.org/software/make/manual/make.html
 # 5. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: MAKE OPTIONS ===================================================== #
 
 SHELL = /bin/bash
 
 export
 
-
 # SECTION: INCLUDES ========================================================= #
 
 include src/init.mk
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 

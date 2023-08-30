@@ -11,7 +11,6 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
 DOCKER_IMAGE_NAME ?=
@@ -22,7 +21,6 @@ else
 	DOCKER_COMPOSE_CFG ?= docker-compose.$(DOCKER_IMAGE_NAME).yaml
 endif
 
-
 # SECTION: MACROS =========================================================== #
 
 # Executes `docker compose` command.
@@ -31,7 +29,6 @@ cd "$(dir $(DOCKER_COMPOSE_CFG))"; \
 docker compose --file "$(notdir $(DOCKER_COMPOSE_CFG))" $(1); \
 cd -
 endef
-
 
 # SECTION: PHONY TARGETS ==================================================== #
 
@@ -46,7 +43,6 @@ docker-down: $(DOCKER_COMPOSE_CFG)
 docker-up: $(DOCKER_COMPOSE_CFG)
 	$(call msg,Creating and starting Docker container defined in $<)
 	@$(call docker,up --detach)
-
 
 # SECTION: FILE TARGETS ===================================================== #
 

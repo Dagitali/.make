@@ -11,20 +11,17 @@
 # 3. https://www.gnu.org/software/make/manual/make.html
 # 4. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: INTERNAL VARIABLES =============================================== #
 
 ### File System ###
 
 env := $(BUILD_DIR)/.env
 
-
 # SECTION: PHONY TARGETS ==================================================== #
 
 ## env: Install shell environment variable files.
 .PHONY: env
 env: $(env)/secrets.env $(env)/settings.env
-
 
 # SECTION: FILE TARGETS ===================================================== #
 

@@ -14,14 +14,12 @@
 # 4. https://www.gnu.org/software/make/manual/make.html
 # 5. https://web.mit.edu/gnu/doc/html/make_1.html
 
-
 # SECTION: EXTERNAL VARIABLES =============================================== #
 
 ### File System ###
 
 BUILD_DIR ?= $(HOME)
 MAKE_HOME ?= .
-
 
 # SECTION: INTERNAL VARIABLES =============================================== #
 
